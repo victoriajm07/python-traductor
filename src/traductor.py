@@ -56,10 +56,18 @@ uploaded_file = st.file_uploader("Selecciona el PDF a traducir", type="pdf")
 col1, col2 = st.columns(2)
 
 with col1:
-    idioma_origen = st.selectbox("Origen ", list(lista_idiomas.keys()), format_func=lambda x: lista_idiomas[x])
+    idioma_origen = st.selectbox(
+        "Origen ", 
+        list(lista_idiomas.keys()), 
+        format_func=lambda x: lista_idiomas[x]
+    )
 
 with col2:
-    idioma_destino = st.selectbox("Destino ", list(lista_idiomas.keys()), format_func=lambda x: lista_idiomas[x])
+    idioma_destino = st.selectbox(
+        "Destino ", 
+        list(lista_idiomas.keys()), 
+        format_func=lambda x: lista_idiomas[x]
+    )
 
 if uploaded_file is not None:
     if st.button('Traducir PDF'):
